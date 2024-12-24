@@ -1,66 +1,51 @@
 
-" ~/.vim/syntax/custom_symbols.vim
-" Custom Vim syntax highlighting for the symbols in your table
-" Define highlight groups for each symbol with your requested colors
+" syntax/skib.vim
+if exists("b:current_syntax")
+  finish 
+endif
+" Syntax definitions
 
-" Stack-related commands
-highlight SymbolS guifg=#00FF00 ctermfg=Green cterm=bold      " Green and Bold for 'S'
-highlight SymbolGreaterThan guifg=#FFFF00 ctermfg=Yellow cterm=bold  " Yellow and Bold for '>'
-highlight SymbolLessThan guifg=#FFFF00 ctermfg=Yellow cterm=bold   " Yellow and Bold for '<'
-highlight SymbolComma guifg=#FFFF00 ctermfg=Yellow cterm=bold       " Yellow and Bold for ','
+syn match skibNum "\<[0-9]\+\>"
+syn match skibId "\<[A-Za-z_][A-Za-z0-9_]*\>"
+syn match skibTrue "\<true\>"
+syn match skibFalse "\<false\>"
+syn match skibNull "\<nil\>"
+syn match skibIf "\<sus\>"
+syn match skibLoop "\<gyatt\>"
+syn match skibPub "\<mrworldwide\>"
+syn match skibLocal "\<rizz\>"
+syn match skibContinue "\<pass\>"
+syn match skibBreak "\<caseoh\>"
+syn match skibReturn "\<lowtaperfade\>"
+syn match skibFn "\<skibidi\>"
+syn match skibEmbed "\<ohio\>"
+syn match skibPipe ":3"
+syn match skibRequire "bussin"
+syn match skibSlot "\<kaicenat\>"
+syn match skibNameSpace "\<livvy\>"
+syn match skibLineComment "tiktokrizzparty.*"
+syn region skibString start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=skibStringContent
 
-" Alphanumeric commands
-highlight SymbolP guifg=#FFFFFF ctermfg=White cterm=bold           " Bold for 'P'
-highlight SymbolC guifg=#FFFFFF ctermfg=White cterm=bold           " Bold for 'C'
-highlight SymbolW guifg=#FFFFFF ctermfg=White cterm=bold           " Bold for 'W'
+" Highlight links
 
-" Special symbols
-highlight SymbolHash guifg=#FFFF00 ctermfg=Yellow cterm=bold        " Yellow and Bold for '#'
-highlight SymbolTilde guifg=#0000FF ctermfg=Blue cterm=bold         " Blue and Bold for '~'
-highlight SymbolAt guifg=#FF0000 ctermfg=Red cterm=bold            " Red and Bold for '@'
-
-" Computational commands
-highlight SymbolPlus guifg=#FFFF00 ctermfg=Yellow cterm=bold        " Yellow and Bold for '+'
-highlight SymbolMinus guifg=#FFFF00 ctermfg=Yellow cterm=bold       " Yellow and Bold for '-'
-highlight SymbolI guifg=#FFFF00 ctermfg=Yellow cterm=bold           " Yellow and Bold for 'i'
-highlight SymbolD guifg=#FFFF00 ctermfg=Yellow cterm=bold           " Yellow and Bold for 'd'
-highlight SymbolZero guifg=#0000FF ctermfg=Blue cterm=bold          " Blue and Bold for '0'
-
-" Space and Newline handling
-highlight SymbolSpace guifg=#FFFFFF ctermfg=White cterm=NONE       " Normal Space
-highlight SymbolTab guifg=#FFFFFF ctermfg=White cterm=NONE        " Normal Tab (using 4 spaces)
-highlight SymbolNewline guifg=#FFFFFF ctermfg=White cterm=NONE     " Normal Newline
-
-" String handling (quoted content)
-highlight SymbolQuote guifg=#00FF00 ctermfg=Green cterm=bold       " Green and Bold for strings
-
-" Flags-related commands
-highlight SymbolQuestion guifg=#0000FF ctermfg=Blue cterm=bold     " Blue and Bold for '?'
-
-" End of input
-highlight SymbolNull guifg=#FFFFFF ctermfg=White cterm=NONE       " No color for '\0' (end of input)
-
-" Define syntax match for each symbol
-syntax match SymbolS "\<S\>"
-syntax match SymbolGreaterThan "\>"
-syntax match SymbolLessThan "\<\<\>"
-syntax match SymbolComma "\,"
-syntax match SymbolP "\<P\>"
-syntax match SymbolC "\<C\>"
-syntax match SymbolW "\<W\>"
-syntax match SymbolHash "\#"
-syntax match SymbolTilde "\~"
-syntax match SymbolAt "\@"
-syntax match SymbolPlus "\+"
-syntax match SymbolMinus "\-"
-syntax match SymbolI "\<i\>"
-syntax match SymbolD "\<d\>"
-syntax match SymbolZero "\<0\>"
-syntax match SymbolSpace "\s"
-syntax match SymbolTab "\t"
-syntax match SymbolNewline "\n"
-syntax match SymbolQuote "\""
-syntax match SymbolQuestion "\?"
-syntax match SymbolNull "\0"
-
-
+highlight def link skibNum Number
+highlight def link skibId Identifier
+highlight def link skibTrue Boolean 
+highlight def link skibFalse Boolean 
+highlight def link skibNull Number 
+highlight def link skibIf Conditional
+highlight def link skibLoop Conditional
+highlight def link skibPub Macro 
+highlight def link skibLocal Conditional
+highlight def link skibContinue Conditional 
+highlight def link skibBreak Conditional
+highlight def link skibReturn Conditional 
+highlight def link skibFn Conditional 
+highlight def link skibEmbed Macro 
+highlight def link skibPipe Structure
+highlight def link skibRequire Macro
+highlight def link skibSlot Macro
+highlight def link skibNameSpace Macro
+highlight def link skibLineComment Comment 
+highlight def link skibString String
+let b:current_syntax = "sab"
