@@ -1,9 +1,6 @@
 
 " ~/.vim/syntax/custom_symbols.vim
 " Custom Vim syntax highlighting for the symbols in your table
-
-syntax case ignore
-
 " Define highlight groups for each symbol with your requested colors
 
 " Stack-related commands
@@ -66,9 +63,4 @@ syntax match SymbolQuote "\""
 syntax match SymbolQuestion "\?"
 syntax match SymbolNull "\0"
 
-" Detect .sab files and set the file type to 'sab'
-augroup filetypedetect
-  autocmd!
-  autocmd BufRead,BufNewFile *.sab setfiletype sab
-augroup END
 
