@@ -66,9 +66,9 @@ syntax match SymbolQuote "\""
 syntax match SymbolQuestion "\?"
 syntax match SymbolNull "\0"
 
-" Optional: make sure the syntax file is loaded for specific file types
-augroup custom_syntax
+" Detect .sab files and set the file type to 'sab'
+augroup filetypedetect
   autocmd!
-  autocmd FileType sab setlocal syntax=sab_highlighting
+  autocmd BufRead,BufNewFile *.sab setfiletype sab
 augroup END
 
